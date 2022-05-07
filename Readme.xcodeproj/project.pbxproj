@@ -9,23 +9,25 @@
 /* Begin PBXBuildFile section */
 		A4DF63B428273392007D8B01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF63B328273392007D8B01 /* AppDelegate.swift */; };
 		A4DF63B628273392007D8B01 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF63B528273392007D8B01 /* SceneDelegate.swift */; };
-		A4DF63B828273392007D8B01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF63B728273392007D8B01 /* ViewController.swift */; };
+		A4DF63B828273392007D8B01 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF63B728273392007D8B01 /* LibraryViewController.swift */; };
 		A4DF63BB28273392007D8B01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4DF63B928273392007D8B01 /* Main.storyboard */; };
 		A4DF63BD28273392007D8B01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4DF63BC28273392007D8B01 /* Assets.xcassets */; };
 		A4DF63C028273392007D8B01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4DF63BE28273392007D8B01 /* LaunchScreen.storyboard */; };
 		A4DF63C8282734EF007D8B01 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF63C7282734EF007D8B01 /* Book.swift */; };
+		A4DF63CA28273A03007D8B01 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF63C928273A03007D8B01 /* Library.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A4DF63B028273392007D8B01 /* Readme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Readme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4DF63B328273392007D8B01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4DF63B528273392007D8B01 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A4DF63B728273392007D8B01 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A4DF63B728273392007D8B01 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		A4DF63BA28273392007D8B01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A4DF63BC28273392007D8B01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4DF63BF28273392007D8B01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4DF63C128273392007D8B01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4DF63C7282734EF007D8B01 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		A4DF63C928273A03007D8B01 /* Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +62,8 @@
 			children = (
 				A4DF63B328273392007D8B01 /* AppDelegate.swift */,
 				A4DF63B528273392007D8B01 /* SceneDelegate.swift */,
-				A4DF63B728273392007D8B01 /* ViewController.swift */,
+				A4DF63C928273A03007D8B01 /* Library.swift */,
+				A4DF63B728273392007D8B01 /* LibraryViewController.swift */,
 				A4DF63B928273392007D8B01 /* Main.storyboard */,
 				A4DF63C7282734EF007D8B01 /* Book.swift */,
 				A4DF63BC28273392007D8B01 /* Assets.xcassets */,
@@ -142,7 +145,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4DF63C8282734EF007D8B01 /* Book.swift in Sources */,
-				A4DF63B828273392007D8B01 /* ViewController.swift in Sources */,
+				A4DF63B828273392007D8B01 /* LibraryViewController.swift in Sources */,
+				A4DF63CA28273A03007D8B01 /* Library.swift in Sources */,
 				A4DF63B428273392007D8B01 /* AppDelegate.swift in Sources */,
 				A4DF63B628273392007D8B01 /* SceneDelegate.swift in Sources */,
 			);
