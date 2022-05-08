@@ -29,5 +29,14 @@ class LibraryViewController: UITableViewController {
         
     }
     
+    @IBSegueAction func showDetailView(_ coder: NSCoder) -> DetailsViewController? {
+        guard let indexPath = tableView.indexPathForSelectedRow else {
+            fatalError("No row selected")
+        }
+        
+        let book = Library.books[indexPath.row]
+        return DetailsViewController(coder: coder, book: book)
+    }
+    
 }
 
