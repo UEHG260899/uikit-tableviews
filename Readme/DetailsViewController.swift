@@ -30,6 +30,28 @@ class DetailsViewController: UIViewController {
         self.book = book
         super.init(coder: coder)
     }
+    
+    @IBAction func updateImage(sender: UIButton) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = UIImagePickerController.isSourceTypeAvailable(.camera)
+        ? .camera
+        : .photoLibrary
+        imagePicker.allowsEditing = true
+        present(imagePicker, animated: true)
+    }
 
 
+}
+
+extension DetailsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let selectedImage = info[.editedImage] as? UIImage else {
+            return
+        }
+        
+        bookImage.image = selectedImage
+        Library.saveImage(selectedImage, forBook: book)
+        dismiss(animated: true, completion: nil)
+    }
 }
