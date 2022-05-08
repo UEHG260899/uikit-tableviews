@@ -20,6 +20,7 @@ class DetailsViewController: UIViewController {
         titleLabel.text = book.title
         authorLabel.text = book.author
         bookImage.image = book.image
+        bookImage.layer.cornerRadius = 12
     }
     
     required init?(coder: NSCoder) {

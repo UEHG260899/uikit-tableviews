@@ -26,10 +26,16 @@ class LibraryViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BookCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "\(BookCell.self)", for: indexPath) as? BookCell else {
+            fatalError("Could not deque cell")
+        }
+        
         let book = Library.books[indexPath.row]
-        cell.textLabel?.text = book.title
-        cell.imageView?.image = book.image
+        cell.bookImage.image = book.image
+        cell.bookImage.layer.cornerRadius = 12
+        cell.titleLabel.text = book.title
+        cell.authorLabel.text = book.author
+
         return cell
         
     }
