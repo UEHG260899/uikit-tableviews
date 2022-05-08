@@ -121,6 +121,9 @@
                                         <constraint firstItem="UWN-az-KHX" firstAttribute="height" secondItem="dh7-6r-ZWb" secondAttribute="height" multiplier="0.9" id="qF8-Pn-SH9"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="mtX-tu-RcR" kind="show" id="QpM-10-q1X"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -282,12 +285,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qMS-I1-xTI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3184" y="96"/>
+            <point key="canvasLocation" x="3049" y="495"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Add Book Table View Controller-->
         <scene sceneID="HeO-rH-MIF">
             <objects>
-                <tableViewController id="mtX-tu-RcR" sceneMemberID="viewController">
+                <tableViewController id="mtX-tu-RcR" customClass="AddBookTableViewController" customModule="Readme" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="k9s-gn-fKh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -317,7 +320,7 @@
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Gs-Rs-SVx">
                                                                     <rect key="frame" x="56.5" y="0.0" width="347.5" height="34"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                    <textInputTraits key="textInputTraits"/>
+                                                                    <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                                                 </textField>
                                                             </subviews>
                                                         </stackView>
@@ -333,7 +336,7 @@
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Author..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sk4-as-0wj">
                                                                     <rect key="frame" x="56.5" y="0.0" width="347.5" height="34"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                    <textInputTraits key="textInputTraits"/>
+                                                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                                 </textField>
                                                             </subviews>
                                                         </stackView>
@@ -371,6 +374,9 @@
                                                             <rect key="frame" x="0.0" y="329" width="319" height="31"/>
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain" title="Add image..."/>
+                                                            <connections>
+                                                                <action selector="addBookImage:" destination="mtX-tu-RcR" eventType="touchUpInside" id="YO5-1e-lD4"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
@@ -392,10 +398,16 @@
                             <outlet property="delegate" destination="mtX-tu-RcR" id="HIx-hU-u33"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="iZg-Zg-HTz"/>
+                    <connections>
+                        <outlet property="authorTextField" destination="Sk4-as-0wj" id="YcY-lO-Jhl"/>
+                        <outlet property="bookImage" destination="vye-BQ-kvB" id="BN0-8d-vUr"/>
+                        <outlet property="titleTextField" destination="2Gs-Rs-SVx" id="gcG-TN-Xrc"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ugh-oi-teK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4199" y="62"/>
+            <point key="canvasLocation" x="3068" y="-225"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yB5-yO-0OJ">

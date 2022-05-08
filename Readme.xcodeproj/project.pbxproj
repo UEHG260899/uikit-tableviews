@@ -17,6 +17,7 @@
 		A4DF63CA28273A03007D8B01 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF63C928273A03007D8B01 /* Library.swift */; };
 		A4DF63CC28273D08007D8B01 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF63CB28273D08007D8B01 /* DetailsViewController.swift */; };
 		A4DF63D828275049007D8B01 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF63D728275049007D8B01 /* BookCell.swift */; };
+		A4DF63DE282767CC007D8B01 /* AddBookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF63DD282767CC007D8B01 /* AddBookTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		A4DF63C928273A03007D8B01 /* Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		A4DF63CB28273D08007D8B01 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		A4DF63D728275049007D8B01 /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
+		A4DF63DD282767CC007D8B01 /* AddBookTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		A4DF63B228273392007D8B01 /* Readme */ = {
 			isa = PBXGroup;
 			children = (
+				A4DF63DD282767CC007D8B01 /* AddBookTableViewController.swift */,
 				A4DF63B328273392007D8B01 /* AppDelegate.swift */,
 				A4DF63B528273392007D8B01 /* SceneDelegate.swift */,
 				A4DF63C928273A03007D8B01 /* Library.swift */,
@@ -154,6 +157,7 @@
 				A4DF63B828273392007D8B01 /* LibraryViewController.swift in Sources */,
 				A4DF63CA28273A03007D8B01 /* Library.swift in Sources */,
 				A4DF63D828275049007D8B01 /* BookCell.swift in Sources */,
+				A4DF63DE282767CC007D8B01 /* AddBookTableViewController.swift in Sources */,
 				A4DF63B428273392007D8B01 /* AppDelegate.swift in Sources */,
 				A4DF63B628273392007D8B01 /* SceneDelegate.swift in Sources */,
 				A4DF63CC28273D08007D8B01 /* DetailsViewController.swift in Sources */,
