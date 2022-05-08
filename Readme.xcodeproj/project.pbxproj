@@ -18,6 +18,7 @@
 		A4DF63CC28273D08007D8B01 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF63CB28273D08007D8B01 /* DetailsViewController.swift */; };
 		A4DF63D828275049007D8B01 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF63D728275049007D8B01 /* BookCell.swift */; };
 		A4DF63DE282767CC007D8B01 /* AddBookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF63DD282767CC007D8B01 /* AddBookTableViewController.swift */; };
+		A4DF63E228277036007D8B01 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4DF63E128277036007D8B01 /* HeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		A4DF63CB28273D08007D8B01 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		A4DF63D728275049007D8B01 /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 		A4DF63DD282767CC007D8B01 /* AddBookTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookTableViewController.swift; sourceTree = "<group>"; };
+		A4DF63E128277036007D8B01 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 		A4DF63B228273392007D8B01 /* Readme */ = {
 			isa = PBXGroup;
 			children = (
+				A4DF63E128277036007D8B01 /* HeaderView.xib */,
 				A4DF63DD282767CC007D8B01 /* AddBookTableViewController.swift */,
 				A4DF63B328273392007D8B01 /* AppDelegate.swift */,
 				A4DF63B528273392007D8B01 /* SceneDelegate.swift */,
@@ -143,6 +146,7 @@
 				A4DF63C028273392007D8B01 /* LaunchScreen.storyboard in Resources */,
 				A4DF63BD28273392007D8B01 /* Assets.xcassets in Resources */,
 				A4DF63BB28273392007D8B01 /* Main.storyboard in Resources */,
+				A4DF63E228277036007D8B01 /* HeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
