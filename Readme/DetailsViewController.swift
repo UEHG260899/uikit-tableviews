@@ -7,11 +7,12 @@
 
 import UIKit
 
-class DetailsViewController: UIViewController {
+class DetailsViewController: UITableViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var bookImage: UIImageView!
+    @IBOutlet weak var reviewTextView: UITextView!
     
     let book: Book
     
@@ -21,6 +22,12 @@ class DetailsViewController: UIViewController {
         authorLabel.text = book.author
         bookImage.image = book.image
         bookImage.layer.cornerRadius = 12
+        
+        if let review = book.review {
+            reviewTextView.text = review
+        }
+        
+        reviewTextView.addDoneButton()
     }
     
     required init?(coder: NSCoder) {
@@ -42,6 +49,13 @@ class DetailsViewController: UIViewController {
         present(imagePicker, animated: true)
     }
 
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        0
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        0
+    }
 
 }
 
@@ -54,5 +68,22 @@ extension DetailsViewController: UIImagePickerControllerDelegate, UINavigationCo
         bookImage.image = selectedImage
         Library.saveImage(selectedImage, forBook: book)
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension DetailsViewController: UITextViewDelegate {
+    func textViewDidEndEditing(_ textView: UITextView) {
+        textView.resignFirstResponder()
+    }
+}
+
+extension UITextView {
+    func addDoneButton() {
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.resignFirstResponder))
+        toolBar.items = [flexSpace, doneButton]
+        self.inputAccessoryView = toolBar
     }
 }
