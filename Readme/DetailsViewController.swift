@@ -20,7 +20,7 @@ class DetailsViewController: UITableViewController {
         super.viewDidLoad()
         titleLabel.text = book.title
         authorLabel.text = book.author
-        bookImage.image = book.image
+        bookImage.image = book.image ?? LibrarySymbol.letterSquare(letter: book.title.first).image
         bookImage.layer.cornerRadius = 12
         
         if let review = book.review {
