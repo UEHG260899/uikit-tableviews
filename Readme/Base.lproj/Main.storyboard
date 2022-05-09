@@ -2,8 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5Ia-xg-Gc2">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -131,7 +131,45 @@
                             <outlet property="delegate" destination="TU0-E8-W00" id="yH9-uZ-jhI"/>
                         </connections>
                     </tableView>
+                    <toolbarItems>
+                        <barButtonItem systemItem="flexibleSpace" id="EES-9I-fHY">
+                            <color key="tintColor" systemColor="secondaryLabelColor"/>
+                        </barButtonItem>
+                        <barButtonItem title="Title" id="4vQ-XO-gD9">
+                            <color key="tintColor" systemColor="secondaryLabelColor"/>
+                            <connections>
+                                <action selector="sortByTitle:" destination="TU0-E8-W00" id="FVW-uj-b7Y"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem systemItem="flexibleSpace" id="Abq-ZM-2Pj">
+                            <color key="tintColor" systemColor="secondaryLabelColor"/>
+                        </barButtonItem>
+                        <barButtonItem title="Author" id="9EQ-qx-EmJ">
+                            <color key="tintColor" systemColor="secondaryLabelColor"/>
+                            <connections>
+                                <action selector="sortByAuthor:" destination="TU0-E8-W00" id="tPW-0U-qPJ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem systemItem="flexibleSpace" id="qf0-40-J2q">
+                            <color key="tintColor" systemColor="secondaryLabelColor"/>
+                        </barButtonItem>
+                        <barButtonItem title="ReadMe" id="wfP-QI-abk">
+                            <color key="tintColor" name="ReadMe Tint Color"/>
+                            <connections>
+                                <action selector="sortByReadMe:" destination="TU0-E8-W00" id="DGT-3D-lMK"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem systemItem="flexibleSpace" id="EU5-Xc-ryQ">
+                            <color key="tintColor" systemColor="secondaryLabelColor"/>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="My Library" id="jSE-gv-1Pm"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outletCollection property="sortButtons" destination="4vQ-XO-gD9" collectionClass="NSMutableArray" id="Jkt-6L-8EV"/>
+                        <outletCollection property="sortButtons" destination="9EQ-qx-EmJ" collectionClass="NSMutableArray" id="Tpq-UZ-qwy"/>
+                        <outletCollection property="sortButtons" destination="wfP-QI-abk" collectionClass="NSMutableArray" id="8B1-hc-fft"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="afU-63-Fdy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -140,7 +178,7 @@
         <!--Details View Controller-->
         <scene sceneID="Hu8-E6-vnV">
             <objects>
-                <tableViewController id="1cg-6l-1vv" customClass="DetailsViewController" customModule="Readme" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="1cg-6l-1vv" customClass="DetailsViewController" customModule="Readme" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="f4C-MB-cvO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -167,6 +205,9 @@
                                                             <state key="normal" image="bookmark.fill" catalog="system">
                                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="48"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="toggleReadMe:" destination="1cg-6l-1vv" eventType="touchUpInside" id="P3D-XW-kYN"/>
+                                                            </connections>
                                                         </button>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3C5-Vm-gJz">
                                                             <rect key="frame" x="49" y="0.5" width="355" height="57"/>
@@ -275,7 +316,13 @@
                             <outlet property="delegate" destination="1cg-6l-1vv" id="xuS-wI-PR8"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Ulj-hA-6hY"/>
+                    <navigationItem key="navigationItem" id="Ulj-hA-6hY">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="HbA-mR-5eM">
+                            <connections>
+                                <action selector="saveChanges:" destination="1cg-6l-1vv" id="vqY-Iy-ioC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="authorLabel" destination="F0X-VM-ZIb" id="dMG-t5-wm4"/>
                         <outlet property="bookImage" destination="IfN-3M-RXr" id="jRk-pe-5ev"/>
@@ -290,7 +337,7 @@
         <!--Add Book Table View Controller-->
         <scene sceneID="HeO-rH-MIF">
             <objects>
-                <tableViewController id="mtX-tu-RcR" customClass="AddBookTableViewController" customModule="Readme" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="mtX-tu-RcR" customClass="AddBookTableViewController" customModule="Readme" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="k9s-gn-fKh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -398,7 +445,18 @@
                             <outlet property="delegate" destination="mtX-tu-RcR" id="HIx-hU-u33"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="iZg-Zg-HTz"/>
+                    <navigationItem key="navigationItem" id="iZg-Zg-HTz">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="QuR-JE-aOi">
+                            <connections>
+                                <action selector="cancelCreation:" destination="mtX-tu-RcR" id="r9d-MS-3Dz"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="iK2-sP-Faj">
+                            <connections>
+                                <action selector="saveNewBook:" destination="mtX-tu-RcR" id="AY0-IW-gVv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="authorTextField" destination="Sk4-as-0wj" id="YcY-lO-Jhl"/>
                         <outlet property="bookImage" destination="vye-BQ-kvB" id="BN0-8d-vUr"/>
@@ -412,13 +470,17 @@
         <!--Navigation Controller-->
         <scene sceneID="yB5-yO-0OJ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5Ia-xg-Gc2" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="5Ia-xg-Gc2" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fZG-I2-m8Z">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vGm-Ds-6o7">
+                        <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="TU0-E8-W00" kind="relationship" relationship="rootViewController" id="gCR-JO-jcj"/>
                     </connections>

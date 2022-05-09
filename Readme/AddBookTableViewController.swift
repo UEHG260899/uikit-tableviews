@@ -13,7 +13,7 @@ class AddBookTableViewController: UITableViewController {
     @IBOutlet weak var authorTextField: UITextField!
     @IBOutlet weak var bookImage: UIImageView!
     
-    
+    var newBookImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +34,22 @@ class AddBookTableViewController: UITableViewController {
         present(picker, animated: true)
     }
     
+    @IBAction func cancelCreation(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func saveNewBook(_ sender: UIBarButtonItem) {
+        guard let title = titleTextField.text,
+              let author = authorTextField.text,
+              !title.isEmpty,
+              !author.isEmpty else {
+                  return
+              }
+        
+        Library.addNew(book: Book(title: title, author: author, readMe: true, image: newBookImage))
+        navigationController?.popViewController(animated: true)
+    }
+    
 }
 
 extension AddBookTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -44,6 +60,7 @@ extension AddBookTableViewController: UIImagePickerControllerDelegate, UINavigat
         }
         
         bookImage.image = selectedImage
+        newBookImage = selectedImage
         picker.dismiss(animated: true)
     }
     

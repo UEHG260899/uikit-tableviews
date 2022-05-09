@@ -13,8 +13,9 @@ class DetailsViewController: UITableViewController {
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var bookImage: UIImageView!
     @IBOutlet weak var reviewTextView: UITextView!
+    @IBOutlet weak var readMeButton: UIButton!
     
-    let book: Book
+    var book: Book
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,11 @@ class DetailsViewController: UITableViewController {
         }
         
         reviewTextView.addDoneButton()
+        
+        let image = book.readMe
+        ? LibrarySymbol.bookmarkFill.image
+        : LibrarySymbol.bookmark.image
+        readMeButton.setImage(image, for: .normal)
     }
     
     required init?(coder: NSCoder) {
@@ -48,6 +54,19 @@ class DetailsViewController: UITableViewController {
         imagePicker.allowsEditing = true
         present(imagePicker, animated: true)
     }
+    
+    @IBAction func saveChanges(_ sender: UIBarButtonItem) {
+        Library.update(book: book)
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func toggleReadMe(_ sender: UIButton) {
+        book.readMe.toggle()
+        let image = book.readMe
+        ? LibrarySymbol.bookmarkFill.image
+        : LibrarySymbol.bookmark.image
+        readMeButton.setImage(image, for: .normal)
+    }
 
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         0
@@ -66,13 +85,14 @@ extension DetailsViewController: UIImagePickerControllerDelegate, UINavigationCo
         }
         
         bookImage.image = selectedImage
-        Library.saveImage(selectedImage, forBook: book)
+        book.image = selectedImage
         dismiss(animated: true, completion: nil)
     }
 }
 
 extension DetailsViewController: UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
+        book.review = textView.text
         textView.resignFirstResponder()
     }
 }
